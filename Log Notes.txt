@@ -1,0 +1,510 @@
+Using username "dustin".
+dustin@sandbox.dev's password:
+Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.16.0-30-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Thu Apr  9 18:35:59 2015 from localhost
+dustin@sandbox:~$ cd /etc/php5
+dustin@sandbox:/etc/php5$ mysql -uroot -p
+Enter password:
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+dustin@sandbox:/etc/php5$ sudo service mysql start
+[sudo] password for dustin:
+start: Job failed to start
+dustin@sandbox:/etc/php5$ sudo service mysql restart
+stop: Unknown instance:
+start: Job failed to start
+dustin@sandbox:/etc/php5$ cd /etc/mysql/my.cnf
+-bash: cd: /etc/mysql/my.cnf: Not a directory
+dustin@sandbox:/etc/php5$ cd /etc/mysql/
+dustin@sandbox:/etc/mysql$ sudoedit my.cnf
+dustin@sandbox:/etc/mysql$ cd /etc/php5
+dustin@sandbox:/etc/php5$ sudo service mysql restart
+stop: Unknown instance:
+start: Job failed to start
+dustin@sandbox:/etc/php5$ sudo service mysql start
+start: Job failed to start
+dustin@sandbox:/etc/php5$ cd /etc/mysql/
+dustin@sandbox:/etc/mysql$ sudoedit my.cnf
+dustin@sandbox:/etc/mysql$ sudo service mysql restart
+stop: Unknown instance:
+start: Job failed to start
+dustin@sandbox:/etc/mysql$ sudo apt-get -y install exim4
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following extra packages will be installed:
+  exim4-base exim4-config exim4-daemon-light heirloom-mailx
+Suggested packages:
+  mail-reader eximon4 exim4-doc-html exim4-doc-info spf-tools-perl swaks
+Recommended packages:
+  mailx
+The following NEW packages will be installed:
+  exim4 exim4-base exim4-config exim4-daemon-light heirloom-mailx
+0 upgraded, 5 newly installed, 0 to remove and 4 not upgraded.
+Need to get 1,842 kB of archives.
+After this operation, 4,297 kB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty/main exim4-config all 4.82-3ubuntu2 [298 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ trusty/main exim4-base amd64 4.82-3ubuntu2 [854 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ trusty/main exim4-daemon-light amd64 4.82-3ubuntu2 [436 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu/ trusty/main exim4 all 4.82-3ubuntu2 [7,876 B]
+Get:5 http://us.archive.ubuntu.com/ubuntu/ trusty/universe heirloom-mailx amd64 12.5-2 [247 kB]
+Fetched 1,842 kB in 1s (979 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package exim4-config.
+(Reading database ... 75500 files and directories currently installed.)
+Preparing to unpack .../exim4-config_4.82-3ubuntu2_all.deb ...
+Unpacking exim4-config (4.82-3ubuntu2) ...
+Selecting previously unselected package exim4-base.
+Preparing to unpack .../exim4-base_4.82-3ubuntu2_amd64.deb ...
+Unpacking exim4-base (4.82-3ubuntu2) ...
+Selecting previously unselected package exim4-daemon-light.
+Preparing to unpack .../exim4-daemon-light_4.82-3ubuntu2_amd64.deb ...
+Unpacking exim4-daemon-light (4.82-3ubuntu2) ...
+Selecting previously unselected package exim4.
+Preparing to unpack .../exim4_4.82-3ubuntu2_all.deb ...
+Unpacking exim4 (4.82-3ubuntu2) ...
+Selecting previously unselected package heirloom-mailx.
+Preparing to unpack .../heirloom-mailx_12.5-2_amd64.deb ...
+Unpacking heirloom-mailx (12.5-2) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+ureadahead will be reprofiled on next reboot
+Setting up exim4-config (4.82-3ubuntu2) ...
+Adding system-user for exim (v4)
+Setting up exim4-base (4.82-3ubuntu2) ...
+exim: DB upgrade, deleting hints-db
+Setting up heirloom-mailx (12.5-2) ...
+update-alternatives: using /usr/bin/heirloom-mailx to provide /usr/bin/mailx (mailx) in auto mode
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up exim4-daemon-light (4.82-3ubuntu2) ...
+ * Starting MTA                                                          [ OK ]
+Setting up exim4 (4.82-3ubuntu2) ...
+dustin@sandbox:/etc/mysql$ sudo dpkg-reconfigure exim4-config
+ * Stopping MTA for restart                                              [ OK ]
+ * Restarting MTA                                                        [ OK ]
+dustin@sandbox:/etc/mysql$ sudoedit /etc/exim4/password.client
+sudoedit: /etc/exim4/password.client unchanged
+dustin@sandbox:/etc/mysql$ sudoedit /etc/exim4/passwd.client
+dustin@sandbox:/etc/mysql$ sudoedit /etc/exim4/passwd.client
+dustin@sandbox:/etc/mysql$ mail Azmodoz@gmail.com
+Subject: Test
+Hello World!!
+EOT
+dustin@sandbox:/etc/mysql$ sudo apt-get -y install phpmyadmin
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following extra packages will be installed:
+  dbconfig-common fontconfig-config fonts-dejavu-core javascript-common
+  libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libjs-codemirror
+  libjs-jquery libjs-jquery-cookie libjs-jquery-event-drag
+  libjs-jquery-metadata libjs-jquery-mousewheel libjs-jquery-tablesorter
+  libjs-jquery-ui libjs-underscore libtiff5 libvpx1 libxpm4 php-gettext
+  php5-gd
+Suggested packages:
+  libgd-tools libjs-jquery-ui-docs www-browser
+The following NEW packages will be installed:
+  dbconfig-common fontconfig-config fonts-dejavu-core javascript-common
+  libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libjs-codemirror
+  libjs-jquery libjs-jquery-cookie libjs-jquery-event-drag
+  libjs-jquery-metadata libjs-jquery-mousewheel libjs-jquery-tablesorter
+  libjs-jquery-ui libjs-underscore libtiff5 libvpx1 libxpm4 php-gettext
+  php5-gd phpmyadmin
+0 upgraded, 24 newly installed, 0 to remove and 4 not upgraded.
+Need to get 7,842 kB of archives.
+After this operation, 35.8 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty/main fonts-dejavu-core all 2.34-1ubuntu1 [1,024 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main fontconfig-config all 2.11.0-0ubuntu4.1 [47.4 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main libfontconfig1 amd64 2.11.0-0ubuntu4.1 [123 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjpeg-turbo8 amd64 1.3.0-0ubuntu2 [104 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjpeg8 amd64 8c-2ubuntu8 [2,194 B]
+Get:6 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main libjbig0 amd64 2.0-2ubuntu4.1 [26.1 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main libtiff5 amd64 4.0.3-7ubuntu0.3 [143 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu/ trusty/main libvpx1 amd64 1.3.0-2 [556 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu/ trusty/main libxpm4 amd64 1:3.5.10-1 [38.3 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu/ trusty/main libgd3 amd64 2.1.0-3 [147 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-gd amd64 5.5.9+dfsg-1ubuntu4.7 [28.0 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu/ trusty/main dbconfig-common all 1.8.47+nmu1 [468 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu/ trusty/main javascript-common all 11 [6,066 B]
+Get:14 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjs-jquery all 1.7.2+dfsg-2ubuntu1 [78.8 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libjs-jquery-cookie all 8-2 [6,502 B]
+Get:16 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libjs-jquery-event-drag all 8-2 [11.2 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjs-jquery-metadata all 8-2 [6,856 B]
+Get:18 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libjs-jquery-mousewheel all 8-2 [7,076 B]
+Get:19 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjs-jquery-tablesorter all 8-2 [64.0 kB]
+Get:20 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libjs-jquery-ui all 1.10.1+dfsg-1 [458 kB]
+Get:21 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjs-underscore all 1.4.4-2ubuntu1 [45.6 kB]
+Get:22 http://us.archive.ubuntu.com/ubuntu/ trusty/universe php-gettext all 1.0.11-1 [17.2 kB]
+Get:23 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libjs-codemirror all 2.23-1 [210 kB]
+Get:24 http://us.archive.ubuntu.com/ubuntu/ trusty/universe phpmyadmin all 4:4.0.10-1 [4,224 kB]
+Fetched 7,842 kB in 5s (1,505 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package fonts-dejavu-core.
+(Reading database ... 75699 files and directories currently installed.)
+Preparing to unpack .../fonts-dejavu-core_2.34-1ubuntu1_all.deb ...
+Unpacking fonts-dejavu-core (2.34-1ubuntu1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../fontconfig-config_2.11.0-0ubuntu4.1_all.deb ...
+Unpacking fontconfig-config (2.11.0-0ubuntu4.1) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../libfontconfig1_2.11.0-0ubuntu4.1_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.11.0-0ubuntu4.1) ...
+Selecting previously unselected package libjpeg-turbo8:amd64.
+Preparing to unpack .../libjpeg-turbo8_1.3.0-0ubuntu2_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (1.3.0-0ubuntu2) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../libjpeg8_8c-2ubuntu8_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../libjbig0_2.0-2ubuntu4.1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.0-2ubuntu4.1) ...
+Selecting previously unselected package libtiff5:amd64.
+Preparing to unpack .../libtiff5_4.0.3-7ubuntu0.3_amd64.deb ...
+Unpacking libtiff5:amd64 (4.0.3-7ubuntu0.3) ...
+Selecting previously unselected package libvpx1:amd64.
+Preparing to unpack .../libvpx1_1.3.0-2_amd64.deb ...
+Unpacking libvpx1:amd64 (1.3.0-2) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../libxpm4_1%3a3.5.10-1_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.10-1) ...
+Selecting previously unselected package libgd3:amd64.
+Preparing to unpack .../libgd3_2.1.0-3_amd64.deb ...
+Unpacking libgd3:amd64 (2.1.0-3) ...
+Selecting previously unselected package php5-gd.
+Preparing to unpack .../php5-gd_5.5.9+dfsg-1ubuntu4.7_amd64.deb ...
+Unpacking php5-gd (5.5.9+dfsg-1ubuntu4.7) ...
+Selecting previously unselected package dbconfig-common.
+Preparing to unpack .../dbconfig-common_1.8.47+nmu1_all.deb ...
+Unpacking dbconfig-common (1.8.47+nmu1) ...
+Selecting previously unselected package javascript-common.
+Preparing to unpack .../javascript-common_11_all.deb ...
+Unpacking javascript-common (11) ...
+Selecting previously unselected package libjs-jquery.
+Preparing to unpack .../libjs-jquery_1.7.2+dfsg-2ubuntu1_all.deb ...
+Unpacking libjs-jquery (1.7.2+dfsg-2ubuntu1) ...
+Selecting previously unselected package libjs-jquery-cookie.
+Preparing to unpack .../libjs-jquery-cookie_8-2_all.deb ...
+Unpacking libjs-jquery-cookie (8-2) ...
+Selecting previously unselected package libjs-jquery-event-drag.
+Preparing to unpack .../libjs-jquery-event-drag_8-2_all.deb ...
+Unpacking libjs-jquery-event-drag (8-2) ...
+Selecting previously unselected package libjs-jquery-metadata.
+Preparing to unpack .../libjs-jquery-metadata_8-2_all.deb ...
+Unpacking libjs-jquery-metadata (8-2) ...
+Selecting previously unselected package libjs-jquery-mousewheel.
+Preparing to unpack .../libjs-jquery-mousewheel_8-2_all.deb ...
+Unpacking libjs-jquery-mousewheel (8-2) ...
+Selecting previously unselected package libjs-jquery-tablesorter.
+Preparing to unpack .../libjs-jquery-tablesorter_8-2_all.deb ...
+Unpacking libjs-jquery-tablesorter (8-2) ...
+Selecting previously unselected package libjs-jquery-ui.
+Preparing to unpack .../libjs-jquery-ui_1.10.1+dfsg-1_all.deb ...
+Unpacking libjs-jquery-ui (1.10.1+dfsg-1) ...
+Selecting previously unselected package libjs-underscore.
+Preparing to unpack .../libjs-underscore_1.4.4-2ubuntu1_all.deb ...
+Unpacking libjs-underscore (1.4.4-2ubuntu1) ...
+Selecting previously unselected package php-gettext.
+Preparing to unpack .../php-gettext_1.0.11-1_all.deb ...
+Unpacking php-gettext (1.0.11-1) ...
+Selecting previously unselected package libjs-codemirror.
+Preparing to unpack .../libjs-codemirror_2.23-1_all.deb ...
+Unpacking libjs-codemirror (2.23-1) ...
+Selecting previously unselected package phpmyadmin.
+Preparing to unpack .../phpmyadmin_4%3a4.0.10-1_all.deb ...
+Unpacking phpmyadmin (4:4.0.10-1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for libapache2-mod-php5 (5.5.9+dfsg-1ubuntu4.7) ...
+Setting up fonts-dejavu-core (2.34-1ubuntu1) ...
+Setting up fontconfig-config (2.11.0-0ubuntu4.1) ...
+Setting up libfontconfig1:amd64 (2.11.0-0ubuntu4.1) ...
+Setting up libjpeg-turbo8:amd64 (1.3.0-0ubuntu2) ...
+Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+Setting up libjbig0:amd64 (2.0-2ubuntu4.1) ...
+Setting up libtiff5:amd64 (4.0.3-7ubuntu0.3) ...
+Setting up libvpx1:amd64 (1.3.0-2) ...
+Setting up libxpm4:amd64 (1:3.5.10-1) ...
+Setting up libgd3:amd64 (2.1.0-3) ...
+Setting up php5-gd (5.5.9+dfsg-1ubuntu4.7) ...
+
+Creating config file /etc/php5/mods-available/gd.ini with new version
+php5_invoke: Enable module gd for cli SAPI
+php5_invoke: Enable module gd for apache2 SAPI
+Setting up dbconfig-common (1.8.47+nmu1) ...
+
+Creating config file /etc/dbconfig-common/config with new version
+Setting up javascript-common (11) ...
+apache2_invoke: Enable configuration javascript-common
+Action 'configtest' failed.
+The Apache error log may have more information.
+apache2_reload: Your configuration is broken. Not reloading Apache 2
+Setting up libjs-jquery (1.7.2+dfsg-2ubuntu1) ...
+Setting up libjs-jquery-cookie (8-2) ...
+Setting up libjs-jquery-event-drag (8-2) ...
+Setting up libjs-jquery-metadata (8-2) ...
+Setting up libjs-jquery-mousewheel (8-2) ...
+Setting up libjs-jquery-tablesorter (8-2) ...
+Setting up libjs-jquery-ui (1.10.1+dfsg-1) ...
+Setting up libjs-underscore (1.4.4-2ubuntu1) ...
+Setting up php-gettext (1.0.11-1) ...
+Setting up libjs-codemirror (2.23-1) ...
+Setting up phpmyadmin (4:4.0.10-1) ...
+dbconfig-common: writing config to /etc/dbconfig-common/phpmyadmin.conf
+
+Creating config file /etc/dbconfig-common/phpmyadmin.conf with new version
+
+Creating config file /etc/phpmyadmin/config-db.php with new version
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2).
+unable to connect to mysql server.
+error encountered creating user:
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+dbconfig-common: phpmyadmin configure: aborted.
+dbconfig-common: flushing administrative password
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2).
+unable to connect to mysql server.
+error encountered creating database:
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+dbconfig-common: phpmyadmin configure: aborted.
+dbconfig-common: flushing administrative password
+populating database via sql...  error encountered populating database:
+mysql said: ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+dbconfig-common: phpmyadmin configure: ignoring errors from here forwards
+done.
+dbconfig-common: flushing administrative password
+apache2_invoke: Enable configuration phpmyadmin
+Action 'configtest' failed.
+The Apache error log may have more information.
+apache2_reload: Your configuration is broken. Not reloading Apache 2
+ * Reloading web server apache2                                                  *
+ * The apache2 configtest failed. Not doing anything.
+Output of config test was:
+AH00526: Syntax error on line 9 of /etc/apache2/sites-enabled/vboxsf.conf:
+Invalid command 'RewriteEngine', perhaps misspelled or defined by a module not included in the server configuration
+Action 'configtest' failed.
+The Apache error log may have more information.
+invoke-rc.d: initscript apache2, action "reload" failed.
+Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+Processing triggers for libapache2-mod-php5 (5.5.9+dfsg-1ubuntu4.7) ...
+W: Operation was interrupted before it could finish
+You have mail in /var/mail/dustin
+dustin@sandbox:/etc/mysql$ sudo chmod -R 755 /var/lib/mysql
+dustin@sandbox:/etc/mysql$ sudoedit /etc/mysql/mysql.sock
+sudoedit: /etc/mysql/mysql.sock unchanged
+dustin@sandbox:/etc/mysql$ sudoedit my.cnf
+Use "fg" to return to nano.
+
+[1]+  Stopped                 sudoedit my.cnf
+dustin@sandbox:/etc/mysql$ sudoedit my.cnf
+dustin@sandbox:/etc/mysql$ sudo mysqladmin -uroot -pstatus
+mysqladmin  Ver 8.42 Distrib 5.5.41, for debian-linux-gnu on x86_64
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Administration program for the mysqld daemon.
+Usage: mysqladmin [OPTIONS] command command....
+  -c, --count=#       Number of iterations to make. This works with -i
+                      (--sleep) only.
+  --debug-check       Check memory and open file usage at exit.
+  --debug-info        Print some debug info at exit.
+  -f, --force         Don't ask for confirmation on drop database; with
+                      multiple commands, continue even if an error occurs.
+  -C, --compress      Use compression in server/client protocol.
+  --character-sets-dir=name
+                      Directory for character set files.
+  --default-character-set=name
+                      Set the default character set.
+  -?, --help          Display this help and exit.
+  -h, --host=name     Connect to host.
+  -b, --no-beep       Turn off beep on error.
+  -p, --password[=name]
+                      Password to use when connecting to server. If password is
+                      not given it's asked from the tty.
+  -P, --port=#        Port number to use for connection or 0 for default to, in
+                      order of preference, my.cnf, $MYSQL_TCP_PORT,
+                      /etc/services, built-in default (3306).
+  --protocol=name     The protocol to use for connection (tcp, socket, pipe,
+                      memory).
+  -r, --relative      Show difference between current and previous values when
+                      used with -i. Currently only works with extended-status.
+  -s, --silent        Silently exit if one can't connect to server.
+  -S, --socket=name   The socket file to use for connection.
+  -i, --sleep=#       Execute commands repeatedly with a sleep between.
+  --ssl               Enable SSL for connection (automatically enabled with
+                      other flags).
+  --ssl-ca=name       CA file in PEM format (check OpenSSL docs, implies
+                      --ssl).
+  --ssl-capath=name   CA directory (check OpenSSL docs, implies --ssl).
+  --ssl-cert=name     X509 cert in PEM format (implies --ssl).
+  --ssl-cipher=name   SSL cipher to use (implies --ssl).
+  --ssl-key=name      X509 key in PEM format (implies --ssl).
+  --ssl-verify-server-cert
+                      Verify server's "Common Name" in its cert against
+                      hostname used when connecting. This option is disabled by
+                      default.
+  -u, --user=name     User for login if not current user.
+  -v, --verbose       Write more information.
+  -V, --version       Output version information and exit.
+  -E, --vertical      Print output vertically. Is similar to --relative, but
+                      prints output vertically.
+  -w, --wait[=#]      Wait and retry if connection is down.
+  --connect-timeout=#
+  --shutdown-timeout=#
+  --plugin-dir=name   Directory for client-side plugins.
+  --default-auth=name Default authentication client-side plugin to use.
+  --enable-cleartext-plugin
+                      Enable/disable the clear text authentication plugin.
+
+Variables (--variable-name=value)
+and boolean options {FALSE|TRUE}  Value (after reading options)
+--------------------------------- ----------------------------------------
+count                             0
+debug-check                       FALSE
+debug-info                        FALSE
+force                             FALSE
+compress                          FALSE
+character-sets-dir                (No default value)
+default-character-set             auto
+host                              (No default value)
+no-beep                           FALSE
+port                              3306
+relative                          FALSE
+socket                            /var/run/mysqld/mysqld.sock
+sleep                             0
+ssl                               FALSE
+ssl-ca                            (No default value)
+ssl-capath                        (No default value)
+ssl-cert                          (No default value)
+ssl-cipher                        (No default value)
+ssl-key                           (No default value)
+ssl-verify-server-cert            FALSE
+user                              root
+verbose                           FALSE
+vertical                          FALSE
+connect-timeout                   43200
+shutdown-timeout                  3600
+plugin-dir                        (No default value)
+default-auth                      (No default value)
+enable-cleartext-plugin           FALSE
+
+Default options are read from the following files in the given order:
+/etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
+The following groups are read: mysqladmin client
+The following options may be given as the first argument:
+--print-defaults        Print the program argument list and exit.
+--no-defaults           Don't read default options from any option file.
+--defaults-file=#       Only read default options from the given file #.
+--defaults-extra-file=# Read this file after the global files are read.
+
+Where command is a one or more of: (Commands may be shortened)
+  create databasename   Create a new database
+  debug                 Instruct server to write debug information to log
+  drop databasename     Delete a database and all its tables
+  extended-status       Gives an extended status message from the server
+  flush-hosts           Flush all cached hosts
+  flush-logs            Flush all logs
+  flush-status          Clear status variables
+  flush-tables          Flush all tables
+  flush-threads         Flush the thread cache
+  flush-privileges      Reload grant tables (same as reload)
+  kill id,id,...        Kill mysql threads
+  password [new-password] Change old password to new-password in current format
+  old-password [new-password] Change old password to new-password in old format
+  ping                  Check if mysqld is alive
+  processlist           Show list of active threads in server
+  reload                Reload grant tables
+  refresh               Flush all tables and close and open logfiles
+  shutdown              Take server down
+  status                Gives a short status message from the server
+  start-slave           Start slave
+  stop-slave            Stop slave
+  variables             Prints variables available
+  version               Get version info from server
+dustin@sandbox:/etc/mysql$ sudo mysqladmin -u root -p status
+Enter password:
+mysqladmin: connect to server at 'localhost' failed
+error: 'Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)'
+Check that mysqld is running and that the socket: '/var/run/mysqld/mysqld.sock' exists!
+dustin@sandbox:/etc/mysql$ sudo service mysql restart
+stop: Unknown instance:
+start: Job failed to start
+dustin@sandbox:/etc/mysql$ sudo service apache2 restart
+ * Restarting web server apache2                                         [fail]
+ * The apache2 configtest failed.
+Output of config test was:
+AH00526: Syntax error on line 9 of /etc/apache2/sites-enabled/vboxsf.conf:
+Invalid command 'RewriteEngine', perhaps misspelled or defined by a module not included in the server configuration
+Action 'configtest' failed.
+The Apache error log may have more information.
+dustin@sandbox:/etc/mysql$ sudoedit sites-available/vboxsf.conf                 Use "fg" to return to nano.
+
+[2]+  Stopped                 sudoedit sites-available/vboxsf.conf
+dustin@sandbox:/etc/mysql$ ls -la site-enabled
+ls: cannot access site-enabled: No such file or directory
+dustin@sandbox:/etc/mysql$ cd /etc/apache2
+dustin@sandbox:/etc/apache2$ ls -la site-enabled
+ls: cannot access site-enabled: No such file or directory
+dustin@sandbox:/etc/apache2$ ls -la sites-enabled
+total 8
+drwxr-xr-x 2 root root 4096 Apr  9 18:59 .
+drwxr-xr-x 8 root root 4096 Apr  9 18:19 ..
+lrwxrwxrwx 1 root root   30 Apr  9 18:59 vboxsf.conf -> ../sites-available/vboxsf.conf
+dustin@sandbox:/etc/apache2$ sudoedit /sites-available/vboxsf.conf
+Use "fg" to return to nano.
+
+[3]+  Stopped                 sudoedit /sites-available/vboxsf.conf
+dustin@sandbox:/etc/apache2$ ls -la sites-available
+total 28
+drwxr-xr-x 2 root root 4096 Apr  9 18:59 .
+drwxr-xr-x 8 root root 4096 Apr  9 18:19 ..
+-rw-r--r-- 1 root root 1332 Jan  7  2014 000-default.conf
+-rw-r--r-- 1 root root 6437 Jan  7  2014 default-ssl.conf
+-rw-r--r-- 1 root root  595 Apr  9 18:41 vboxsf.com
+-rw-r--r-- 1 root root  595 Apr  9 18:59 vboxsf.conf
+dustin@sandbox:/etc/apache2$ sudoedite /sites-available/vboxsf.conf
+-bash: sudoedite: command not found
+dustin@sandbox:/etc/apache2$ sudoedit /sites-available/vboxsf.conf
+sudoedit: /sites-available/vboxsf.conf unchanged
+dustin@sandbox:/etc/apache2$ cd /etc/apache2/sites-available
+dustin@sandbox:/etc/apache2/sites-available$ sudoedit vboxsf.conf
+dustin@sandbox:/etc/apache2/sites-available$ cd /etc/mysql
+dustin@sandbox:/etc/mysql$ mysql -uroot -p status
+Enter password:
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+dustin@sandbox:/etc/mysql$ sudo service apache2 restart
+ * Restarting web server apache2                                         [fail]
+ * The apache2 configtest failed.
+Output of config test was:
+AH00526: Syntax error on line 9 of /etc/apache2/sites-enabled/vboxsf.conf:
+Invalid command 'RewriteEngine', perhaps misspelled or defined by a module not included in the server configuration
+Action 'configtest' failed.
+The Apache error log may have more information.
+dustin@sandbox:/etc/mysql$ ls -lart /var/run/my*
+total 0
+drwxr-xr-x  2 mysql root  40 Apr  9 19:23 .
+drwxr-xr-x 16 root  root 580 Apr  9 19:35 ..
+dustin@sandbox:/etc/mysql$ touch /var/run/mysqld.sock
+touch: cannot touch ‘/var/run/mysqld.sock’: Permission denied
+dustin@sandbox:/etc/mysql$ sudo touch /var/run/mysqld.sock
+dustin@sandbox:/etc/mysql$ ls -lart /var/run/my*
+-rw-r--r-- 1 root  root  0 Apr  9 20:03 /var/run/mysqld.sock
+
+/var/run/mysqld:
+total 0
+drwxr-xr-x  2 mysql root  40 Apr  9 19:23 .
+drwxr-xr-x 16 root  root 600 Apr  9 20:03 ..
+dustin@sandbox:/etc/mysql$ ls -lart /var/run/mysqld
+total 0
+drwxr-xr-x  2 mysql root  40 Apr  9 19:23 .
+drwxr-xr-x 16 root  root 600 Apr  9 20:03 ..
+dustin@sandbox:/etc/mysql$ mdir /var/run/mysqld
+-bash: mdir: command not found
+dustin@sandbox:/etc/mysql$ mkdir /var/run/mysqld
+mkdir: cannot create directory ‘/var/run/mysqld’: File exists
+dustin@sandbox:/etc/mysql$ sudo touch /var/run/mysqld.sock
+dustin@sandbox:/etc/mysql$ touch /var/run/mysqld.sock
+touch: cannot touch ‘/var/run/mysqld.sock’: Permission denied
+dustin@sandbox:/etc/mysql$ ^C
+dustin@sandbox:/etc/mysql$
